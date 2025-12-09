@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Cadastro de Filmes 🍿</h1>
+    <p>Adicione seus filmes favoritos ao sistema</p>
+</header>
+
+<section class="form-container">
+    <form class="form-card">
+
+        <label>Título do Filme:</label>
+        <input type="text" name="titulo" placeholder="Ex: O Senhor dos Anéis" required>
+
+        <label>Ano de Lançamento:</label>
+        <input type="number" name="ano" min="1900" max="2025" placeholder="Ex: 2001" required>
+
+        <label>Gênero:</label>
+        <select name="genero" required>
+            <option value="">Selecione...</option>
+            <option>Ação</option>
+            <option>Drama</option>
+            <option>Comédia</option>
+            <option>Romance</option>
+            <option>Terror</option>
+            <option>Sci-Fi</option>
+            <option>Fantasia</option>
+        </select>
+
+        <label>Plataforma de Streaming:</label>
+        <select name="plataforma" required>
+            <option value="">Selecione...</option>
+            <option>Netflix</option>
+            <option>Prime Video</option>
+            <option>HBO Max</option>
+            <option>Disney+</option>
+            <option>Apple TV+</option>
+            <option>Outros</option>
+        </select>
+
+        <label>URL do Pôster (opcional):</label>
+        <input type="url" id="posterUrl" name="posterUrl" placeholder="https://exemplo.com/poster.jpg">
+        <div class="poster-preview" id="posterPreview" aria-hidden="true" style="display:none;">
+            <img id="posterImg" alt="Pré-visualização do pôster">
+        </div>
+
+        <label>Nota (0 a 10): <span class="rating-value" id="ratingValue">5</span></label>
+        <input type="range" id="ratingRange" name="nota" min="0" max="10" value="5">
+
+        <label>Descrição:</label>
+        <textarea name="descricao" rows="4" placeholder="Por que esse filme é especial?"></textarea>
+
+        <button type="submit">Cadastrar Filme</button>
+
+        <a href="index.html" class="voltar">⬅ Voltar</a>
+    </form>
+</section>
+
+<script>
+// Atualiza o valor exibido da nota
+const ratingRange = document.getElementById('ratingRange');
+const ratingValue = document.getElementById('ratingValue');
+if (ratingRange && ratingValue) {
+    ratingRange.addEventListener('input', () => {
+        ratingValue.textContent = ratingRange.value;
+    });
+}
+
+// Pré-visualiza o pôster a partir da URL
+const posterUrl = document.getElementById('posterUrl');
+const posterPreview = document.getElementById('posterPreview');
+const posterImg = document.getElementById('posterImg');
+if (posterUrl && posterPreview && posterImg) {
+    posterUrl.addEventListener('input', () => {
+        const url = posterUrl.value.trim();
+        if (!url) {
+            posterPreview.style.display = 'none';
+            posterImg.src = '';
+            posterImg.alt = 'Pré-visualização do pôster';
+            posterPreview.setAttribute('aria-hidden', 'true');
+            return;
+        }
+        posterImg.src = url;
+        posterImg.alt = 'Pôster: ' + (document.querySelector('input[name="titulo"]').value || 'filme');
+        posterImg.onload = () => {
+            posterPreview.style.display = 'block';
+            posterPreview.setAttribute('aria-hidden', 'false');
+        };
+        posterImg.onerror = () => {
+            posterPreview.style.display = 'none';
+            posterPreview.setAttribute('aria-hidden', 'true');
+        };
+    });
+}
+</script>
+
+</body>
+</html>

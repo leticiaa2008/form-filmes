@@ -1,0 +1,188 @@
+/* ========================= */
+/* CONFIGURAÇÕES GERAIS */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 60%, #2c2c2c 100%);
+    padding-bottom: 40px;
+    color: #f5e9d7;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #b71c1c 0%, #fbc02d 100%);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    border-bottom: 4px solid #fbc02d;
+}
+
+.header h1 {
+    font-size: 44px;
+    color: #ffd700;
+    font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px #b71c1c, 0 0 12px #fbc02d;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #fffbe6;
+    text-shadow: 0 0 6px #b71c1c;
+}
+
+/* ========================= */
+/* CARDS DA TELA INICIAL */
+/* ========================= */
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: #222;
+    width: 260px;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffd700;
+    box-shadow: 0 4px 16px rgba(183,28,28,0.25), 0 2px 8px rgba(0,0,0,0.25);
+    border: 2px solid #b71c1c;
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(251,192,45,0.25), 0 4px 16px rgba(0,0,0,0.35);
+    border-color: #ffd700;
+    background: #2c2c2c;
+}
+
+.icon {
+    width: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px #fbc02d);
+}
+
+.card h3 {
+    color: #b71c1c;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+    text-shadow: 0 0 6px #ffd700;
+}
+
+/* ========================= */
+/* FORMULÁRIOS */
+/* ========================= */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-card {
+    background: #222;
+    padding: 30px;
+    border-radius: 15px;
+    width: 370px;
+    box-shadow: 0 4px 16px rgba(251,192,45,0.15), 0 2px 8px rgba(0,0,0,0.25);
+    border: 2px solid #b71c1c;
+    color: #ffd700;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+    display: block;
+    color: #fbc02d;
+    text-shadow: 0 0 4px #b71c1c;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #b71c1c;
+    background: #181818;
+    color: #ffd700;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(251,192,45,0.08);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #ffd700;
+    background: #222;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #b71c1c 0%, #fbc02d 100%);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 2px 8px rgba(251,192,45,0.15);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #fbc02d 0%, #b71c1c 100%);
+    color: #ffd700;
+}
+
+.voltar {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #fbc02d;
+    text-decoration: none;
+    font-size: 16px;
+    text-shadow: 0 0 4px #b71c1c;
+}
+.voltar:hover {
+    color: #ffd700;
+}
+
+.poster-preview {
+    margin: 15px 0;
+    text-align: center;
+}
+.poster-preview img {
+    max-width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #b71c1c, 0 0 8px #fbc02d;
+    border: 2px solid #ffd700;
+}
+
+.rating-value {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 8px;
+    text-shadow: 0 0 4px #b71c1c;
+}
